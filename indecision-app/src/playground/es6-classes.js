@@ -55,12 +55,12 @@ class Traveler extends Person {
 }
 
 const newbie = new Student("John Apple", 27, "knitting");
-console.log(newbie.hasMajor());
 console.log(newbie.getDescription());
+console.log(newbie.hasMajor());
 
 const newbie2 = new Student("Jen Peach", 21);
-console.log(newbie2.hasMajor());
 console.log(newbie2.getDescription());
+console.log(newbie2.hasMajor());
 
 const me = new Traveler("Andrew Mead", 26, "Philadelphia");
 console.log(me.getGreeting());
