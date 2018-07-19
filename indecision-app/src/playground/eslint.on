@@ -1,0 +1,38 @@
+// Back up of eslint preferences
+
+{
+  "plugins": ["node"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:node/recommended",
+    "airbnb"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "node/exports-style": ["error", "module.exports"],
+    "comma-dangle": "off",
+    "no-trailing-spaces": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "local",
+        "args": "none"
+      }
+    ],
+    "func-names": "off",
+    "prefer-arrow-callback": "off",
+    "space-before-function-paren": "off",
+    "arrow-body-style": "off",
+    "arrow-parens": "off",
+    "prefer-const": "off"
+  }
+}

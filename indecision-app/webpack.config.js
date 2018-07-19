@@ -8,14 +8,17 @@ module.exports = {
   },
   mode: "development",
   module: {
-    rules: [{
-      loader: "babel-loader",
-      // test for files ending with .js, then load through babel
-      test: /\.js$/,
-      exclude: /node_modules/
-    }, {
-      test: /\.css$/
-    }]
+    rules: [
+      {
+        loader: "babel-loader",
+        // test for files ending with .js, then load through babel
+        test: /\.js$/,
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/
+      }
+    ]
   },
   devtool: "cheap-module-source-map",
   devServer: {
