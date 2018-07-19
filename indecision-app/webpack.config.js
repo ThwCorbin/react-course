@@ -13,6 +13,8 @@ module.exports = {
       // test for files ending with .js, then load through babel
       test: /\.js$/,
       exclude: /node_modules/
+    }, {
+      test: /\.css$/
     }]
   },
   devtool: "cheap-module-source-map",

@@ -6,7 +6,7 @@ const app = {
   options: []
 };
 
-const onFormSubmit = e => {
+const onFormSubmit = (e) => {
   e.preventDefault();
   const option = e.target.elements.option.value;
   if (option) {
@@ -37,9 +37,11 @@ const render = () => {
       <h2>
         {app.options.length > 0 ? `Here are your options:` : "No options"}
       </h2>
-      <button disabled={app.options.length === 0} onClick={makeDecision}>What should I do?</button>
+      <button disabled={app.options.length === 0} onClick={makeDecision}>
+        What should I do?
+      </button>
       <button onClick={removeAll}>Remove All</button>
-      <ol>{app.options.map(option => <li key={option}>{option}</li>)}</ol>
+      <ol>{app.options.map((option) => <li key={option}>{option}</li>)}</ol>
       <form onSubmit={onFormSubmit}>
         <input type="text" name="option" />
         <button>Add Option</button>

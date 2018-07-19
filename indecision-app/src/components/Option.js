@@ -1,10 +1,10 @@
 import React from "react";
 
-const Option = props => (
+const Option = (props) => (
   <div>
     Option: {props.optionText}
     <button
-      onClick={e => {
+      onClick={(e) => {
         props.handleDeleteOption(props.optionText);
       }}
     >

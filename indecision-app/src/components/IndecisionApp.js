@@ -22,18 +22,20 @@ export default class IndecisionApp extends React.Component {
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
   };
-  handleDeleteOption = OptionToRemove => {
-    this.setState(prevState => ({
-      options: prevState.options.filter(option => OptionToRemove !== option)
+  handleDeleteOption = (OptionToRemove) => {
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => OptionToRemove !== option)
     }));
   };
-  handleAddOption = option => {
+  handleAddOption = (option) => {
     if (!option) {
       return "Enter valid value to add item";
     } else if (this.state.options.indexOf(option) > -1) {
       return "This option already exists";
     }
-    this.setState(prevState => ({ options: prevState.options.concat(option) }));
+    this.setState((prevState) => ({
+      options: prevState.options.concat(option)
+    }));
     // Use .concat (not .push) so we do not change the prevState array
     // Wrap the logic after => in parathesis so that the object can implicitly return
   };
@@ -75,9 +77,9 @@ export default class IndecisionApp extends React.Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        <OptionModal 
-        selectedOption={this.state.selectedOption} 
-        handleClearSelectedOption={this.handleClearSelectedOption}
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.handleClearSelectedOption}
         />
       </div>
     );

@@ -44,8 +44,8 @@ class IndecisionApp extends React.Component {
     this.setState(() => ({ options: [] }));
   }
   handleDeleteOption(OptionToRemove) {
-    this.setState(prevState => ({
-      options: prevState.options.filter(option => OptionToRemove !== option)
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => OptionToRemove !== option)
     }));
   }
   handleAddOption(option) {
@@ -54,7 +54,9 @@ class IndecisionApp extends React.Component {
     } else if (this.state.options.indexOf(option) > -1) {
       return "This option already exists";
     }
-    this.setState(prevState => ({ options: prevState.options.concat(option) }));
+    this.setState((prevState) => ({
+      options: prevState.options.concat(option)
+    }));
     // Use .concat (not .push) so we do not change the prevState array
     // Wrap the logic after => in parathesis so that the object can implicitly return
   }
@@ -80,7 +82,7 @@ class IndecisionApp extends React.Component {
 }
 
 // ...and there are React stateless functional components
-const Header = props => {
+const Header = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
@@ -93,7 +95,7 @@ Header.defaultProps = {
   title: "Indecision"
 };
 
-const Action = props => {
+const Action = (props) => {
   return (
     <div>
       <button onClick={props.handlePick} disabled={!props.hasOptions}>
@@ -103,12 +105,12 @@ const Action = props => {
   );
 };
 
-const Options = props => {
+const Options = (props) => {
   return (
     <div>
       <button onClick={props.handleDeleteOptions}>Remove All</button>
       {props.options.length === 0 && <p>Please add an option.</p>}
-      {props.options.map(option => (
+      {props.options.map((option) => (
         <Option
           key={option}
           optionText={option}
@@ -119,12 +121,12 @@ const Options = props => {
   );
 };
 
-const Option = props => {
+const Option = (props) => {
   return (
     <div>
       Option: {props.optionText}
       <button
-        onClick={e => {
+        onClick={(e) => {
           props.handleDeleteOption(props.optionText);
         }}
       >
