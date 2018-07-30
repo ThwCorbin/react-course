@@ -8,8 +8,8 @@ import HelpPage from "../components/HelpPage";
 import NotFoundPage from "../components/NotFoundPage";
 
 const AppRouter = () => (
-  // BrowserRouter api only allows one child, thus put routes, etc. in a <div>
-  // Renders the first child <Route> or <Redirect> that matches the location
+  // <BrowserRouter> only allows one child, thus put routes, etc. in a <div>
+  // <Switch> enders the first child <Route> or <Redirect> that matches the location
   <BrowserRouter>
     <div>
       <Header />
