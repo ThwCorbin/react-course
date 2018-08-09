@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import ExpenseForm from "./ExpenseForm";
 import { addExpense } from "../actions/expenses";
 
+// adds expense and returns to dashboard via props.history.push("/")
 const AddExpensePage = (props) => (
   <div>
     <h1>Add Expense</h1>
